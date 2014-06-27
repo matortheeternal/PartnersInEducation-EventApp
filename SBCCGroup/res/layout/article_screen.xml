@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="5dp">
+
+<TextView
+    android:id="@+id/articleListHeaderTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:text="@string/toEvents"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textSize="35sp"
+    android:textStyle="bold" />
+
+<ExpandableListView
+    android:id="@android:id/list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/toCheckin"
+    android:layout_below="@id/articleListHeaderTextView"
+    android:layout_margin="10dp"
+    android:childDivider="@android:color/black"
+    android:divider="@android:color/black"
+    android:dividerHeight="2dp"
+    android:fadingEdge="none" >
+
+</ExpandableListView>
+
+<Button
+    android:id="@+id/toCheckin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:onClick="tocheckin"
+    android:text="@string/neartestCheckin" />
+
+</RelativeLayout>
