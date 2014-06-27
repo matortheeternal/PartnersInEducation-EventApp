@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.apache.commons.codec.binary.Base64;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -71,10 +72,11 @@ public class LoginActivity extends Activity {
 	}
 
 	public void loginPressed(View v) {
-		Toast.makeText(this, "hi", Toast.LENGTH_LONG).show();
 //		new loginBackGround().execute(null, null, null);
 //		if (volunteer == null)
 //			Toast.makeText(this, "null volunteer", Toast.LENGTH_LONG).show();
+		Intent i = new Intent(getBaseContext(), ActivityProfile.class);
+		startActivity(i);
 		
 		
 	}

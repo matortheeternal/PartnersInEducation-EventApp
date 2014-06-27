@@ -80,7 +80,7 @@ public class Client {
 	 * To send a message to the console or the GUI
 	 */
 	private void display(String msg) {
-		gui.toast(msg);
+//		gui.toast(msg);
 	}
 
 	/*

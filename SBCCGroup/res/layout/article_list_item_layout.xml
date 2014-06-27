@@ -16,6 +16,6 @@ android:layout_centerVertical="true"
 android:layout_margin="10dp"
 android:textAppearance="?android:attr/textAppearanceMedium"
 android:textColor="#0585C4"
-android:textSize="12sp"
+android:textSize="18sp"
 android:textStyle="bold" />
 </RelativeLayout>

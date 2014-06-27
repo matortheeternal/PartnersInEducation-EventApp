@@ -8,22 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:paddingBottom="200dp"
         android:src="@drawable/logo" />
-
-    <ToggleButton
-        android:id="@+id/checkinToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="85dp"
-        android:checked="false"
-        android:padding="30dp"
-        android:onClick="toggleCheckIn"
-        android:textOff="@string/checkinOn"
-        android:textOn="@string/checkinOff"
-        android:textSize="30sp" />
 
     <Button
         android:id="@+id/checkinToEventsButton"
@@ -36,5 +23,50 @@
         android:onClick="toEvents"
         android:text="@string/toEvents"
         android:textSize="12sp" />
+
+    <ToggleButton
+        android:id="@+id/checkinToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkinToEventsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="94dp"
+        android:checked="false"
+        android:onClick="toggleCheckIn"
+        android:padding="30dp"
+        android:textOff="@string/checkinOn"
+        android:textOn="@string/checkinOff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkinToEventsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="33dp"
+        android:layout_marginLeft="51dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/stopTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkinToEventsButton"
+        android:layout_marginBottom="32dp"
+        android:layout_toLeftOf="@+id/checkinToEventsButton"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/thankyou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkinToggle"
+        android:layout_alignBottom="@+id/checkinToggle"
+        android:layout_centerHorizontal="true"
+        android:text="@string/thankyou"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:visibility="invisible" />
 
 </RelativeLayout>

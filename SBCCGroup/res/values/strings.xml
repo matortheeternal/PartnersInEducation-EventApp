@@ -9,6 +9,8 @@
     <string name="profileButton">Profile</string>
     <string name="toEvents">Events</string>
     <string name="password">Password</string>
+    <string name="thankyou">Thank you! \nReturning you to events page.</string>
+    <string name="neartestCheckin">Check in to next event!</string>
 
     <!-- Begin strings for Profile layout -->
     <string name="profileHeader">Profile</string>

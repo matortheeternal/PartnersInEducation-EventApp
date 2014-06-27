@@ -43,8 +43,6 @@ public class MainActivity extends Activity implements
 		setContentView(R.layout.activity_main);
 
 		locationClient = new LocationClient(this, this, this);
-		currentLocation = locationClient.getLastLocation();
-		locationClient.requestLocationUpdates(REQUEST, this);
 
 	}
 
@@ -116,22 +114,6 @@ public class MainActivity extends Activity implements
 		return false;
 	}
 
-	public void getGPS(View v) throws IOException {
-		currentLocation = locationClient.getLastLocation();
-		locationClient.requestLocationUpdates(REQUEST, this);
-		latText = String.valueOf(currentLocation.getLatitude());
-		longText = String.valueOf(currentLocation.getLongitude());
-		
-		// StringBuilder sb = new StringBuilder();
-		// sb.append(String.valueOf(currentLocation.getLatitude()));
-		// sb.append(", " + String.valueOf(currentLocation.getLongitude()));
-		// Toast.makeText(this, sb, Toast.LENGTH_LONG).show();
-		// Was used for testing
-		// landl[0] = String.valueOf(currentLocation.getLatitude());
-		// landl[1] = String.valueOf(currentLocation.getLongitude());
-		new UpdateUIAsync().execute(null, null, null);
-
-	}
 	public void loadProfile(View v) throws IOException {
 		startActivity(new Intent(this, ActivityProfile.class));
 	}
