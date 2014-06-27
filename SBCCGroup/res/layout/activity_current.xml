@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="200dp"
+        android:src="@drawable/logo" />
+
+    <ToggleButton
+        android:id="@+id/checkinToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="85dp"
+        android:checked="false"
+        android:padding="30dp"
+        android:onClick="toggleCheckIn"
+        android:textOff="@string/checkinOn"
+        android:textOn="@string/checkinOff"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/checkinToEventsButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:minHeight="5dp"
+        android:onClick="toEvents"
+        android:text="@string/toEvents"
+        android:textSize="12sp" />
+
+</RelativeLayout>
