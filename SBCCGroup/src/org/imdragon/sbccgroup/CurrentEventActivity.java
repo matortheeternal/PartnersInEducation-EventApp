@@ -36,6 +36,7 @@ public class CurrentEventActivity extends Activity implements
 	private String stoppingTime = "";
 	private String startingTime = "";
 	private ToggleButton tgbutton;
+	@SuppressWarnings("unused")
 	private Button ebutton;
 	private TextView thankstext;
 	private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
@@ -205,7 +206,7 @@ public class CurrentEventActivity extends Activity implements
 
 		protected Exception doInBackground(Object... params) {
 			// int i = (int) params[0];
-			i = (int) params[1];
+			i = (Integer) params[1];
 			try {
 				if (i == 0) {
 
