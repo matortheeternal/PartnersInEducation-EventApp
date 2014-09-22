@@ -2,9 +2,9 @@
 <resources>
 
     <string-array name="sampleEvents">
-        <item>Ellwood School</item>
+        <item>Ellwood Elementary</item>
         <item>Citrix School</item>
-        <item>Dos Pueblos</item>
+        <item>Dos Pueblos High</item>
     </string-array>
   
 </resources>  
