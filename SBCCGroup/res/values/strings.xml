@@ -22,8 +22,8 @@
 
 
     <!-- Begin strings for Login layout -->
-    <string name="loginUsername">Username: </string>
-    <string name="loginPassword">Password: </string>
+    <string name="loginUsername">Username </string>
+    <string name="loginPassword">Password </string>
     <string name="loginButton">Login</string>
     <string name="passwordHint">Enter password</string>
     <string name="usernameHint">Enter username</string>
@@ -32,5 +32,6 @@
     <string name="checkinOff">Done</string>
     <string name="title_activity_current_event">CurrentEventActivity</string>
     <string name="hello_world">Hello world!</string>
+    <color name="white">#FFFFFF</color>
 
 </resources>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white"
     tools:context="com.example.partnersineducation_eventapp.MainActivity$PlaceholderFragment" >
 
     <EditText
@@ -15,55 +15,50 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/usernameText"
         android:layout_below="@+id/usernameText"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
         android:ems="10"
-        android:hint="@string/passwordHint"
-        android:inputType="textPassword" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/loginPasswordLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/passwordText"
-        android:layout_below="@+id/usernameText"
-        android:layout_marginTop="36dp"
-        android:text="@string/loginPassword"
-                android:hint="@string/passwordHint"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/loginUsernameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/usernameText"
-        android:layout_alignLeft="@+id/usernameText"
-        android:layout_marginBottom="44dp"
-        android:text="@string/loginUsername"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:hint="@string/password"
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/usernameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
+        android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="@string/usernameHint" />
+        android:hint="@string/loginUsername"
+        android:inputType="textImeMultiLine" >
 
-    <Button
+        <requestFocus />
+    </EditText>
+
+    <ImageButton
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:background="@color/white"
+        android:cropToPadding="false"
         android:onClick="loginPressed"
-        android:text="@string/loginButton" />
+        android:scaleType="fitCenter"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:src="@drawable/loginbutton" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/usernameText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/logo" />
+
+ 
 
 </RelativeLayout>
