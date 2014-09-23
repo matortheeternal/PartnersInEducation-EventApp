@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SBCCGroup</string>
+    <string name="app_name">Partners In Education</string>
     <string name="imageDesc">Logo</string>
     <string name="action_settings">Settings</string>
     <string name="gpsOutput">Your GPS Coordinates</string>
@@ -24,13 +24,23 @@
     <!-- Begin strings for Login layout -->
     <string name="loginUsername">Username: </string>
     <string name="loginPassword">Password: </string>
-    <string name="loginButton">Login</string>
+    <string name="loginButton">Log In</string>
     <string name="passwordHint">Enter password</string>
     <string name="usernameHint">Enter username</string>
     <!-- End strings for Login layout -->
-    <string name="checkinOn">I\'m here!</string>
-    <string name="checkinOff">Done</string>
-    <string name="title_activity_current_event">CurrentEventActivity</string>
+    
+    <!-- Begin strings for Event Description -->
+    <string name="checkinOn">Check In</string>
+    <string name="checkinOff">Check Out</string>
+    <string name="title_activity_current_event">Event</string>
     <string name="hello_world">Hello world!</string>
+    <!-- End Strings for Event Description -->
+    
+    <!--Begin strings for Event List layouts -->
+    <string name="upcoming">Upcoming</string>
+    <string name="past">Past</string>
+    <string name="next_event"> Next Event</string>
+    <string name="other_events">Other Events</string>
+    <!-- End strings for Event LIsts layouts -->
 
 </resources>
