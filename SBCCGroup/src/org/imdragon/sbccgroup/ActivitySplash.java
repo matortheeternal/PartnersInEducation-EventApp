@@ -3,6 +3,7 @@ package org.imdragon.sbccgroup;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.webkit.CookieSyncManager;
 
 public class ActivitySplash extends Activity {
 

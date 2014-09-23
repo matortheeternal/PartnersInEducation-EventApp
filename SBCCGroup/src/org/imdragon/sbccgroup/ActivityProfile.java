@@ -2,23 +2,43 @@ package org.imdragon.sbccgroup;
 
 import java.io.IOException;
 
+import org.apache.http.client.HttpResponseException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.savagelook.android.UrlJsonAsyncTask;
 
 public class ActivityProfile extends Activity {
-	 Volunteer sampleVolunteer = new Volunteer("mgarcia", "123", "Mark", "Garcia", 12, 3, "Awesome", "3");
+	private SharedPreferences mPreferences;
+	private String VOL_URL = "http://pieapi.us.to:3000/vols/";
+	private String volunteer_id;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
-		new popVolunteer().execute(null,null,null);
+		mPreferences = getSharedPreferences("CurrentUser", MODE_PRIVATE);
+		volunteer_id = mPreferences.getString("volunteer_id", "");
+		if (volunteer_id.length() != 0)
+			loadVolunteerFromAPI(VOL_URL + volunteer_id + ".json");
 	}
 
 	@Override
@@ -41,44 +61,88 @@ public class ActivityProfile extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	private class popVolunteer extends
-	AsyncTask<Object, Integer, Exception> {
-
-@Override
-protected Exception doInBackground(Object... params) {
-	try {
-
-		return null;
-	} catch (Exception ex) {
-		return ex;
+	private void loadVolunteerFromAPI(String url) {
+	    GetVolunteerTask task = new GetVolunteerTask(ActivityProfile.this);
+	    task.setMessageLoading("Loading volunteer data...");
+	    task.execute(url);
 	}
-}
-
-@Override
-protected void onPostExecute(Exception error) {
-
-	TextView pheader = (TextView) findViewById(R.id.profileTop);
-	pheader.setText(sampleVolunteer.getFirstName());
-	TextView name = (TextView) findViewById(R.id.profileTop);
-	name.setText(sampleVolunteer.getFirstName());
-	StringBuilder sb = new StringBuilder();
-	sb.append(sampleVolunteer.getFirstName());
-	sb.append(" " +sampleVolunteer.getLastName());
-	TextView namefield = (TextView) findViewById(R.id.textView6);
-	namefield.setText(sb.toString());
-	TextView hoursfield = (TextView) findViewById(R.id.textView7);
-	hoursfield.setText(String.valueOf(sampleVolunteer.getTotalHours()));
-	TextView eattended = (TextView) findViewById(R.id.textView8);
-	eattended.setText(String.valueOf(sampleVolunteer.getTotalEvents()));
-	TextView rankfield = (TextView) findViewById(R.id.textView9);
-	rankfield.setText(String.valueOf(sampleVolunteer.getRank()));
 	
+	private class GetVolunteerTask extends UrlJsonAsyncTask {
+	    public GetVolunteerTask(Context context) {
+	        super(context);
+	    }
+	    
+	    protected JSONObject doInBackground(String... urls) {
+			DefaultHttpClient client = new DefaultHttpClient();
+			HttpGet get = new HttpGet(urls[0]);
+			String response = null;
+			JSONObject json = new JSONObject();
+			
+			this.setConnectionParams(4000, 0, 0);
+			
+			try {
+				try {
+					// attach the cookies we got during signin to our GET request
+					get.setHeader("Accept", "application/json");
+					CookieManager cm = CookieManager.getInstance();
+					CookieSyncManager.getInstance().startSync();
+					CookieSyncManager.getInstance().sync();
+					CookieSyncManager.getInstance().stopSync();
+					// we could call .replace("request_method=POST; ", "") to remove the
+					// cookie that appears to be getting added to this
+					String cookies = cm.getCookie("pieapi.us.to"); 
+					Log.e("ClientProtocol", cookies);
+					get.setHeader("Cookie", cookies);
+					ResponseHandler<String> responseHandler = new BasicResponseHandler();
+					response = client.execute(get, responseHandler);
+					Log.e("ClientProtocol", "JSON = "+response);
+					json = new JSONObject(response);
+				} catch (HttpResponseException e) {
+					e.printStackTrace();
+					Log.e("ClientProtocol", "" + e);
+					json.put("info", "Failed.");
+				} catch (IOException e) {
+					e.printStackTrace();
+					Log.e("IO", "" + e);
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+				Log.e("JSON", "" + e);
+			}
 
+			return json;
+	    }
+
+	    @Override
+        protected void onPostExecute(JSONObject json) {
+            try {
+            	// set header to Preferred Name
+    			TextView pheader = (TextView) findViewById(R.id.profileTop);
+    			pheader.setText(json.getString("NamePreferred"));
+    			
+    			// build name string and put it in the Name field
+    			StringBuilder sb = new StringBuilder();
+    			sb.append(json.getString("NameFirst"));
+    			sb.append(" " + json.getString("NameLast"));
+    			TextView namefield = (TextView) findViewById(R.id.textView6);
+    			namefield.setText(sb.toString());
+    			
+    			// set other fields to empty values because
+    			// these fields don't exist in the table yet
+    			TextView hoursfield = (TextView) findViewById(R.id.textView7);
+    			hoursfield.setText("0");
+    			TextView eattended = (TextView) findViewById(R.id.textView8);
+    			eattended.setText("0");
+    			TextView rankfield = (TextView) findViewById(R.id.textView9);
+    			rankfield.setText("0");
+            } catch (Exception e) {
+            	Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
+	        } finally {
+	            super.onPostExecute(json);
+	        }
+	    }
+	}
 	
-}
-
-}
-
 	// END Google Play Services connection callbacks section //
 	public void toEvents(View v) throws IOException {
 		startActivity(new Intent(this, ActivityEvent.class));

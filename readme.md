@@ -4,4 +4,8 @@ For the Google I/O Hackathon at Citrix, Santa Barbara, we created an android app
 
 Current Status
 ==================================
-We made a backend that hooks up to a test MySQL database using Java and JDBC (MySQL Connector/J).  We also made a frontend android application with a functioning UI.  We were unable to hook the front and backend together at the Hackathon due to network and time constraints.
+We made a backend that hooks up to a test MySQL database using Ruby on Rails.  We also made a frontend android application with a functioning UI.  We're currently upgrading the UI and finishing with populating data from the backend throughout the application.
+
+Required Libraries
+===================
+You'll need to import appcompat-v7 and the Google APIs libprojects into Eclipse and link them with your build path as libraries correctly in order to compile this project.
