@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SBCCGroup</string>
+    <string name="app_name">Partners in Education</string>
     <string name="imageDesc">Logo</string>
     <string name="action_settings">Settings</string>
     <string name="profileButton">Profile</string>
@@ -37,7 +37,7 @@
     <color name="pieYellow">#E7C75B</color>
 
     <!-- Events Strings -->
-    <string name="title_activity_eventswipe">eventSwipe</string>
+    <string name="title_activity_eventswipe">Events</string>
     <string name="upcomingTab">Upcoming</string>
     <string name="nextEvent">Upcoming Events</string>
     <string name="pastEvents">Past Events</string>
