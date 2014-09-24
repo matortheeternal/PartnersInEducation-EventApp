@@ -71,13 +71,6 @@ public class LoginActivity extends Activity {
 		 mUsername = usernameField.getText().toString();
 		 EditText passwordField = (EditText) findViewById(R.id.passwordText);
 		 mPassword = passwordField.getText().toString();
-		// enable above if LIVE
-		// below only for TESTING
-
-		// ************** DELETE BELOW WHEN LIVE! **************
-//		mUsername = "test_volunteer22";
-//		mPassword = "password";
-		// ************** DELETE ABOVE WHEN LIVE! **************
 
 		if (mUsername.length() == 0 || mPassword.length() == 0) {
 			// input fields are empty

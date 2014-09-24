@@ -61,8 +61,6 @@ public class UpcomingEventsFragment extends Fragment {
             try {
             	// put events in lists
             	try {
-        			Log.e("ClientProtocol", "Passed JSON = " + json.toString());
-
         			// sort events
         			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy",
         					Locale.US);
@@ -79,7 +77,7 @@ public class UpcomingEventsFragment extends Fragment {
         				eventDate = sdf.parse(event.getString("date"));
         				eventCal.setTime(eventDate);
         				if (cal.equals(eventCal) || cal.before(eventCal)) {
-        					Log.e("ClientProtocol",
+        					Log.v("ClientProtocol",
         							"Upcoming event: " + sdf.format(eventDate));
         					upcomingEvents.add(event.getString("title")+
         							"  ("+event.getString("date")+")");

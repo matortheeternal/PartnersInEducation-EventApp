@@ -47,7 +47,7 @@ public class GetTask extends UrlJsonAsyncTask {
 				response = client.execute(get, responseHandler);
 				if (response.startsWith("["))
 					response = "{\"data\":"+response+"}";
-				Log.e("ClientProtocol", "JSON = "+response);
+				Log.v("ClientProtocol", "JSON = "+response);
 				json = new JSONObject(response);
 			} catch (HttpResponseException e) {
 				e.printStackTrace();

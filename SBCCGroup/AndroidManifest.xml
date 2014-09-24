@@ -50,6 +50,8 @@
             android:name=".CurrentEventActivity"
             android:parentActivityName=".ActivityEvent" >
         </activity>
+        <activity android:name=".ActivityInfo" >
+        </activity>
         <activity
             android:name=".EventswipeActivity"
             android:label="@string/title_activity_eventswipe" >

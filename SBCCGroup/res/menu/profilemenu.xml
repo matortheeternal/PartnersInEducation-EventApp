@@ -4,7 +4,7 @@
     tools:context="org.imdragon.sbccgroup.MainActivity" >
 
     <item
-        android:id="@+id/epieProfile"
+        android:id="@+id/pieProfile"
         android:icon="@drawable/puzzleicon"
         android:orderInCategory="100"
         android:showAsAction="always"

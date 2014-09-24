@@ -32,7 +32,7 @@ public class ActivityProfile extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.profilemenu, menu);
 		return true;
 	}
 
@@ -43,6 +43,9 @@ public class ActivityProfile extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			return true;
+		} else if (id == R.id.pieProfile) {
+			startActivity(new Intent(this, ActivityInfo.class));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -62,25 +65,33 @@ public class ActivityProfile extends Activity {
 	    @Override
         protected void onPostExecute(JSONObject json) {
             try {
-            	// set header to Preferred Name
-    			TextView pheader = (TextView) findViewById(R.id.profileTop);
-    			pheader.setText(json.getString("NamePreferred"));
-    			
     			// build name string and put it in the Name field
     			StringBuilder sb = new StringBuilder();
     			sb.append(json.getString("NameFirst"));
     			sb.append(" " + json.getString("NameLast"));
-    			TextView namefield = (TextView) findViewById(R.id.textView6);
+    			TextView namefield = (TextView) findViewById(R.id.vName);
     			namefield.setText(sb.toString());
+    			TextView phonefield = (TextView) findViewById(R.id.vPhone);
+				phonefield.setText(json.getString("Phone1"));
+				TextView emailfield = (TextView) findViewById(R.id.vEmail);
+				emailfield.setText(json.getString("Email1"));
+				TextView addressfield = (TextView) findViewById(R.id.vAddress);
+				StringBuilder addressString = new StringBuilder();
+				addressString.append(json.getString("Street1"));
+				addressString.append(" \n");addressString.append(json.getString("City1"));
+				
+				addressString.append(", " +json.getString("State1"));
+				addressString.append(" "+json.getString("ZipCode1"));
+				addressfield.setText(addressString.toString());
     			
     			// set other fields to empty values because
     			// these fields don't exist in the table yet
-    			TextView hoursfield = (TextView) findViewById(R.id.textView7);
-    			hoursfield.setText("0");
-    			TextView eattended = (TextView) findViewById(R.id.textView8);
-    			eattended.setText("0");
-    			TextView rankfield = (TextView) findViewById(R.id.textView9);
-    			rankfield.setText("0");
+    			TextView hoursfield = (TextView) findViewById(R.id.profileHours);
+    			hoursfield.setText("108.5");
+//    			TextView eattended = (TextView) findViewById(R.id.textView8);
+//    			eattended.setText("0");
+//    			TextView rankfield = (TextView) findViewById(R.id.textView9);
+//    			rankfield.setText("0");
             } catch (Exception e) {
             	Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
 	        } finally {

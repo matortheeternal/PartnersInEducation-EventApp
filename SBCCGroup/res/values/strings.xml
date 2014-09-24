@@ -12,8 +12,12 @@
 
     <!-- Begin strings for Profile layout -->
     <string name="profileHeader">Profile</string>
-    <string name="name">Name: </string>
-    <string name="hoursServed">Hours served: </string>
+    <string name="name">Name</string>
+    <string name="phoneLabel">Phone</string>
+    <string name="emailLabel">Email</string>
+    <string name="addressLabel">Address</string>
+    <string name="hours">HOURS</string>
+    <string name="hoursRight">hours served for education</string>
     <string name="eventsAt">Events Attended: </string>
     <string name="rank">Rank: </string>
     <!-- End strings for Profile Layout -->

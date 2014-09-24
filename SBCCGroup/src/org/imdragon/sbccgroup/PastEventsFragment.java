@@ -58,8 +58,6 @@ public class PastEventsFragment extends Fragment {
             try {
             	// put events in lists
             	try {
-        			Log.e("ClientProtocol", "Passed JSON = " + json.toString());
-
         			// sort events
         			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy",
         					Locale.US);
@@ -76,7 +74,7 @@ public class PastEventsFragment extends Fragment {
         				eventDate = sdf.parse(event.getString("date"));
         				eventCal.setTime(eventDate);
         				if (cal.after(eventCal)) {
-        					Log.e("ClientProtocol",
+        					Log.v("ClientProtocol",
         							"Past event: " + sdf.format(eventDate));
         					pastEvents.add(event.getString("title")+
         							"  ("+event.getString("date")+")");
