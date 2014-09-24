@@ -43,8 +43,14 @@
     <string name="pastEvents">Past Events</string>
     <string name="otherEvents">Other Events</string>
     <string name="pastTab">Past</string>
-    
     <!-- End Events Strings section -->
+    
+    <!--  Info Strings -->
+	<string name="infoManager">Your Volunteer Manager</string>
+	<string name="yourManager">Ashley Cortez\nVolunteer Manager - West SB\ncce@sbceo.org\n805-xxx-xxxx \ \  ext. xxxx</string>
+	<string name="partners">Partners in Education</string>
+	<string name="partnersWebsite">http://partners.sbceo.org/</string>
+	<string name="coordinator">Lucille Ramirez\nVolunteer Program Coordinator\nlucille@sbceo.org\n805-964-4710 \ \  ext. 4403</string>
 
     <!-- Unused string but just in case below -->
     <string name="passwordHint">Enter password</string>

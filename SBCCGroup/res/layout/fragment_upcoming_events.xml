@@ -13,6 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="18dp"
+        android:layout_marginLeft="5dp"
         android:text="@string/nextEvent"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -21,7 +22,6 @@
         android:id="@+id/nextEventList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/otherEventsList"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/upcomingTopText" >
 
