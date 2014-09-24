@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Partners In Education</string>
+    <string name="app_name">SBCCGroup</string>
     <string name="imageDesc">Logo</string>
     <string name="action_settings">Settings</string>
-    <string name="gpsOutput">Your GPS Coordinates</string>
-    <string name="getGPS">Get Coordinates</string>
     <string name="profileButton">Profile</string>
     <string name="toEvents">Events</string>
     <string name="password">Password</string>
@@ -22,35 +20,36 @@
 
 
     <!-- Begin strings for Login layout -->
-<<<<<<< HEAD
     <string name="loginUsername">Username </string>
     <string name="loginPassword">Password </string>
     <string name="loginButton">Login</string>
-=======
-    <string name="loginUsername">Username: </string>
-    <string name="loginPassword">Password: </string>
-    <string name="loginButton">Log In</string>
->>>>>>> ed6b4cbd7ceb2fd3921b02b149cc00f113642a76
+    <!-- End strings for Login layout -->
+
+    <string name="checkinOn">I\'m here!</string>
+    <string name="checkinOff">Done</string>
+    <string name="title_activity_current_event">CurrentEventActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Colors for branding -->
+    <color name="white">#FFFFFF</color>
+    <color name="pieBlue">#216CB4</color>
+    <color name="pieRed">#BD312B</color>
+    <color name="pieYellow">#E7C75B</color>
+
+    <!-- Events Strings -->
+    <string name="title_activity_eventswipe">eventSwipe</string>
+    <string name="upcomingTab">Upcoming</string>
+    <string name="nextEvent">Next Event</string>
+    <string name="pastEvents">Past Events</string>
+    <string name="otherEvents">Other Events</string>
+    <string name="pastTab">Past</string>
+    
+    <!-- End Events Strings section -->
+
+    <!-- Unused string but just in case below -->
     <string name="passwordHint">Enter password</string>
     <string name="usernameHint">Enter username</string>
-    <!-- End strings for Login layout -->
-    
-    <!-- Begin strings for Event Description -->
-    <string name="checkinOn">Check In</string>
-    <string name="checkinOff">Check Out</string>
-    <string name="title_activity_current_event">Event</string>
-    <string name="hello_world">Hello world!</string>
-<<<<<<< HEAD
-    <color name="white">#FFFFFF</color>
-=======
-    <!-- End Strings for Event Description -->
-    
-    <!--Begin strings for Event List layouts -->
-    <string name="upcoming">Upcoming</string>
-    <string name="past">Past</string>
-    <string name="next_event"> Next Event</string>
-    <string name="other_events">Other Events</string>
-    <!-- End strings for Event LIsts layouts -->
->>>>>>> ed6b4cbd7ceb2fd3921b02b149cc00f113642a76
+    <string name="gpsOutput">Your GPS Coordinates</string>
+    <string name="getGPS">Get Coordinates</string>
 
 </resources>

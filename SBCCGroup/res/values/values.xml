@@ -2,10 +2,34 @@
 <resources>
 
     <string-array name="sampleEvents">
-        <item>Ellwood Elementary</item>
+        <item>Ellwood School</item>
         <item>Citrix School</item>
-        <item>Dos Pueblos High</item>
+        <item>Dos Pueblos</item>
     </string-array>
-  
-</resources>  
 
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#43B5EE</item>
+    </style>
+
+    <string-array name="nextEventArray">
+        <item>Next Event Goes Here</item>
+    </string-array>
+    <string-array name="otherEventsArray">
+        <item>Avid Event</item>
+        <item>Mock Event</item>
+        <item>Teacher Event</item>
+        <item>Random Event</item>
+    </string-array>
+    <string-array name="pastEventsArray">
+        <item >This Happened</item>
+        <item >This also Happened</item>
+        <item >This kinda Happened</item>
+        <item >This has Happened</item>
+        <item >This should Happened</item>
+    </string-array>
+
+</resources>

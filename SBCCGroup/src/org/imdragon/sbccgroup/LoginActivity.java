@@ -67,10 +67,17 @@ public class LoginActivity extends Activity {
 	}
 
 	public void loginPressed(View v) {
-		EditText usernameField = (EditText) findViewById(R.id.usernameText);
-		mUsername = usernameField.getText().toString();
-		EditText passwordField = (EditText) findViewById(R.id.passwordText);
-		mPassword = passwordField.getText().toString();
+		 EditText usernameField = (EditText) findViewById(R.id.usernameText);
+		 mUsername = usernameField.getText().toString();
+		 EditText passwordField = (EditText) findViewById(R.id.passwordText);
+		 mPassword = passwordField.getText().toString();
+		// enable above if LIVE
+		// below only for TESTING
+
+		// ************** DELETE BELOW WHEN LIVE! **************
+//		mUsername = "test_volunteer22";
+//		mPassword = "password";
+		// ************** DELETE ABOVE WHEN LIVE! **************
 
 		if (mUsername.length() == 0 || mPassword.length() == 0) {
 			// input fields are empty
@@ -86,7 +93,7 @@ public class LoginActivity extends Activity {
 
 	private class LoginTask extends UrlJsonAsyncTask {
 		private List<Cookie> cookies;
-		
+
 		public LoginTask(Context context) {
 			super(context);
 		}
@@ -101,7 +108,7 @@ public class LoginActivity extends Activity {
 			String response = null;
 			String authField = "name=\"authenticity_token\" type=\"hidden\" value=";
 			JSONObject json = new JSONObject();
-			
+
 			this.setConnectionParams(4000, 0, 1);
 
 			try {
@@ -110,11 +117,12 @@ public class LoginActivity extends Activity {
 					get.setHeader("Accept", "text/html");
 					ResponseHandler<String> responseHandler = new BasicResponseHandler();
 					response = client.execute(get, responseHandler);
-					csrf_token = response.substring(
-							response.indexOf(authField) + authField.length() + 1,
-							response.indexOf(authField) + authField.length() + 45);
-//					Log.e("ClientProtocol", "CSRF token = "+csrf_token);
-					
+					csrf_token = response.substring(response.indexOf(authField)
+							+ authField.length() + 1,
+							response.indexOf(authField) + authField.length()
+									+ 45);
+					// Log.e("ClientProtocol", "CSRF token = "+csrf_token);
+
 					// setup the returned values in case something goes wrong
 					json.put("success", false);
 					json.put("info", "Something went wrong. Retry!");
@@ -124,26 +132,29 @@ public class LoginActivity extends Activity {
 					userObj.put("password", mPassword);
 					holder.put("session", userObj);
 					holder.put("authenticity_token", csrf_token);
-					holder.put("utf8","&#x2713;");
+					holder.put("utf8", "&#x2713;");
 					StringEntity se = new StringEntity(holder.toString());
 					post.setEntity(se);
 
 					// setup the request headers
 					post.setHeader("Accept", "application/json");
 					post.setHeader("Content-Type", "application/json");
-					
+
 					// send the JSON request
 					responseHandler = new BasicResponseHandler();
 					response = client.execute(post, responseHandler);
 					json = new JSONObject(response);
-//					Log.e("ClientProtocol", "remember_token = "+json.getJSONObject("data").getString("remember_token"));
+					// Log.e("ClientProtocol",
+					// "remember_token = "+json.getJSONObject("data").getString("remember_token"));
 
-					// get all the cookies and sync them across the entire application
+					// get all the cookies and sync them across the entire
+					// application
 					cookies = client.getCookieStore().getCookies();
 					CookieSyncManager.getInstance().startSync();
 					for (int i = 0; i < cookies.size(); i++) {
 						Cookie c = cookies.get(i);
-						CookieManager.getInstance().setCookie(c.getDomain(), c.getName() +"="+ c.getValue());
+						CookieManager.getInstance().setCookie(c.getDomain(),
+								c.getName() + "=" + c.getValue());
 					}
 					CookieSyncManager.getInstance().sync();
 					CookieSyncManager.getInstance().stopSync();
@@ -160,7 +171,7 @@ public class LoginActivity extends Activity {
 				e.printStackTrace();
 				Log.e("JSON", "" + e);
 			}
-			
+
 			return json;
 		}
 
@@ -172,8 +183,10 @@ public class LoginActivity extends Activity {
 					SharedPreferences.Editor editor = mPreferences.edit();
 					// save the returned auth_token into the SharedPreferences
 					JSONObject data = json.getJSONObject("data");
-					editor.putString("remember_token", data.getString("remember_token"));
-					editor.putString("volunteer_id", data.getString("volunteer_id"));
+					editor.putString("remember_token",
+							data.getString("remember_token"));
+					editor.putString("volunteer_id",
+							data.getString("volunteer_id"));
 					editor.commit();
 
 					// launch the HomeActivity and close this one

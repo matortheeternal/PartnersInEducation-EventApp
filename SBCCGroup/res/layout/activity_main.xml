@@ -1,57 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="org.imdragon.sbccgroup.MainActivity"
-    tools:ignore="MergeRootFrame" >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/loginUsernameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="69dp"
-        android:text="@string/gpsOutput"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/gpsButton"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:onClick="getGPS"
-        android:text="@string/getGPS" />
-
-    <TextView
-        android:id="@+id/longitudeDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/loginUsernameLabel"
-        android:layout_below="@+id/latitudeDisplay"
-        android:layout_marginTop="45dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/latitudeDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/longitudeDisplay"
-        android:layout_below="@+id/loginUsernameLabel"
-        android:layout_marginTop="24dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/gpsButton"
-        android:layout_alignBottom="@+id/gpsButton"
-        android:layout_alignParentLeft="true"
-        android:onClick="loadProfile"
-        android:text="@string/profileButton" />
-
-</RelativeLayout>
+</android.support.v4.view.ViewPager>

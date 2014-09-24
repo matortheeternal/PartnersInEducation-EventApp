@@ -1,13 +1,5 @@
 package org.imdragon.sbccgroup;
 
-import java.io.IOException;
-
-import org.apache.http.client.HttpResponseException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -15,16 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.savagelook.android.UrlJsonAsyncTask;
 
 public class ActivityProfile extends Activity {
 	private SharedPreferences mPreferences;
@@ -67,50 +54,9 @@ public class ActivityProfile extends Activity {
 	    task.execute(url);
 	}
 	
-	private class GetVolunteerTask extends UrlJsonAsyncTask {
+	private class GetVolunteerTask extends GetTask {
 	    public GetVolunteerTask(Context context) {
 	        super(context);
-	    }
-	    
-	    protected JSONObject doInBackground(String... urls) {
-			DefaultHttpClient client = new DefaultHttpClient();
-			HttpGet get = new HttpGet(urls[0]);
-			String response = null;
-			JSONObject json = new JSONObject();
-			
-			this.setConnectionParams(4000, 0, 0);
-			
-			try {
-				try {
-					// attach the cookies we got during signin to our GET request
-					get.setHeader("Accept", "application/json");
-					CookieManager cm = CookieManager.getInstance();
-					CookieSyncManager.getInstance().startSync();
-					CookieSyncManager.getInstance().sync();
-					CookieSyncManager.getInstance().stopSync();
-					// we could call .replace("request_method=POST; ", "") to remove the
-					// cookie that appears to be getting added to this
-					String cookies = cm.getCookie("pieapi.us.to"); 
-					Log.e("ClientProtocol", cookies);
-					get.setHeader("Cookie", cookies);
-					ResponseHandler<String> responseHandler = new BasicResponseHandler();
-					response = client.execute(get, responseHandler);
-					Log.e("ClientProtocol", "JSON = "+response);
-					json = new JSONObject(response);
-				} catch (HttpResponseException e) {
-					e.printStackTrace();
-					Log.e("ClientProtocol", "" + e);
-					json.put("info", "Failed.");
-				} catch (IOException e) {
-					e.printStackTrace();
-					Log.e("IO", "" + e);
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-				Log.e("JSON", "" + e);
-			}
-
-			return json;
 	    }
 
 	    @Override
@@ -144,8 +90,9 @@ public class ActivityProfile extends Activity {
 	}
 	
 	// END Google Play Services connection callbacks section //
-	public void toEvents(View v) throws IOException {
-		startActivity(new Intent(this, ActivityEvent.class));
+	
+	public void toEvents(View v) {
+		startActivity(new Intent(this, EventswipeActivity.class));
 	}
 
 }

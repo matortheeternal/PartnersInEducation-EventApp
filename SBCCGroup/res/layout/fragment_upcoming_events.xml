@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/UpcomingEventFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fFFFFf"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/upcomingTopText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/nextEvent"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/upcomingLastText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/upcomingTopText"
+        android:layout_marginTop="100dp"
+        android:text="@string/otherEvents"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/otherEventsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/upcomingLastText"
+        android:layout_marginBottom="20dp"
+        >
+
+    </ListView>
+
+    <ListView
+        android:id="@+id/nextEventList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/otherEventsList"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/upcomingTopText" >
+
+    </ListView>
+
+</RelativeLayout>

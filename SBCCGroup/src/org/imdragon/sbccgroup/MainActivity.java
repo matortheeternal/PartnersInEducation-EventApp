@@ -132,10 +132,10 @@ public class MainActivity extends Activity implements
 
 		@Override
 		protected void onPostExecute(Exception error) {
-			TextView lat = (TextView) findViewById(R.id.latitudeDisplay);
-			lat.setText(latText);
-			TextView longi = (TextView) findViewById(R.id.longitudeDisplay);
-			longi.setText(longText);
+//			TextView lat = (TextView) findViewById(R.id.latitudeDisplay);
+//			lat.setText(latText);
+//			TextView longi = (TextView) findViewById(R.id.longitudeDisplay);
+//			longi.setText(longText);
 		}
 
 	}
