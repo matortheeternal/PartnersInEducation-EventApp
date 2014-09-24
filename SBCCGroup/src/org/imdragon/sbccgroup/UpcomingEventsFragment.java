@@ -12,22 +12,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class UpcomingEventsFragment extends Fragment {
-
-	// this array will hold the Other Events, so put them in there
-//	private String[] nextEvents = new String[1];
 	private ArrayList<String> upcomingEvents = new ArrayList<String>();
-	// this one holds the next one, made it size 1 so it won't do funny things
+	private ArrayList<JSONObject> upcomingEventsJson = new ArrayList<JSONObject>();
 	private ArrayAdapter<String> nEventAdapter;
 	private ListView nEventView;
 	private View rootView;
@@ -81,18 +81,28 @@ public class UpcomingEventsFragment extends Fragment {
         							"Upcoming event: " + sdf.format(eventDate));
         					upcomingEvents.add(event.getString("title")+
         							"  ("+event.getString("date")+")");
+        					upcomingEventsJson.add(event);
         				} 
         			}
         			
+        			// set up list
         			nEventAdapter = new ArrayAdapter<String>(getActivity(),
         					android.R.layout.simple_list_item_1, upcomingEvents);
         			nEventView = (ListView) rootView.findViewById(R.id.nextEventList);
         			nEventView.setAdapter(nEventAdapter);
+        			
+        			// create onitemclick listener
+        			nEventView.setOnItemClickListener(new OnItemClickListener() {
+			            @Override
+			            public void onItemClick(AdapterView<?> parent, View view, int position,
+			                    long id) {
+							JSONObject eventJson = upcomingEventsJson.get(position);
+			            	loadEventDetails(eventJson);
+			            }
+			        });
         		} catch (JSONException e) {
-        			// TODO Auto-generated catch block
         			e.printStackTrace();
         		} catch (ParseException e) {
-        			// TODO Auto-generated catch block
         			e.printStackTrace();
         		}
             } catch (Exception e) {
@@ -101,5 +111,12 @@ public class UpcomingEventsFragment extends Fragment {
 	            super.onPostExecute(json);
 	        }
 	    }
+	}
+	
+	private void loadEventDetails(JSONObject eventJson) {
+		EventswipeActivity activity = (EventswipeActivity) getActivity();
+		Intent intent = new Intent(activity, ActivityDetails.class);
+		intent.putExtra("json", eventJson.toString());
+		startActivity(intent);
 	}
 }

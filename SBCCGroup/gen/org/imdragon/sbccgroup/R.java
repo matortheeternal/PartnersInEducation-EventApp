@@ -76,97 +76,107 @@ public final class R {
         public static final int tab_unselected_pressed_piestyle=0x7f020025;
     }
     public static final class id {
-        public static final int PastEventsFragment=0x7f0a0023;
-        public static final int TextView01=0x7f0a000b;
-        public static final int TextView02=0x7f0a000c;
-        public static final int TextView03=0x7f0a000d;
-        public static final int UpcomingEventFragment=0x7f0a0026;
-        public static final int action_settings=0x7f0a0029;
-        public static final int addressLabel=0x7f0a001a;
-        public static final int articleContentTextView=0x7f0a001f;
-        public static final int articleHeaderTextView=0x7f0a0020;
-        public static final int articleListHeaderTextView=0x7f0a0021;
-        public static final int button2=0x7f0a0007;
+        public static final int PastEventsFragment=0x7f0a0029;
+        public static final int TextView01=0x7f0a0011;
+        public static final int TextView02=0x7f0a0012;
+        public static final int TextView03=0x7f0a0013;
+        public static final int UpcomingEventFragment=0x7f0a002c;
+        public static final int action_settings=0x7f0a002f;
+        public static final int addressLabel=0x7f0a0020;
+        public static final int articleContentTextView=0x7f0a0025;
+        public static final int articleHeaderTextView=0x7f0a0026;
+        public static final int articleListHeaderTextView=0x7f0a0027;
+        public static final int button2=0x7f0a000d;
+        public static final int checkinButton=0x7f0a000b;
         public static final int checkinToEventsButton=0x7f0a0001;
         public static final int checkinToggle=0x7f0a0002;
         public static final int container=0x7f0a0006;
-        public static final int emailLabel=0x7f0a0019;
-        public static final int epieProfile=0x7f0a002a;
-        public static final int eventsList=0x7f0a0008;
-        public static final int hoursRight=0x7f0a0016;
-        public static final int imageView1=0x7f0a0011;
-        public static final int linearLayout1=0x7f0a0014;
-        public static final int loginButton=0x7f0a0010;
-        public static final int nameLabel=0x7f0a0018;
-        public static final int nextEventList=0x7f0a0028;
-        public static final int pListView=0x7f0a0025;
-        public static final int pager=0x7f0a0012;
-        public static final int passwordText=0x7f0a000e;
-        public static final int pastTopText=0x7f0a0024;
-        public static final int phoneLabel=0x7f0a0017;
+        public static final int dateLine=0x7f0a000a;
+        public static final int description=0x7f0a0008;
+        public static final int emailLabel=0x7f0a001f;
+        public static final int epieProfile=0x7f0a0030;
+        public static final int eventTitle=0x7f0a0007;
+        public static final int eventsList=0x7f0a000e;
+        public static final int hoursRight=0x7f0a001c;
+        public static final int imageView1=0x7f0a0017;
+        public static final int linearLayout1=0x7f0a001a;
+        public static final int locationAndContact=0x7f0a0009;
+        public static final int loginButton=0x7f0a0016;
+        public static final int nameLabel=0x7f0a001e;
+        public static final int nextEventList=0x7f0a002e;
+        public static final int pListView=0x7f0a002b;
+        public static final int pager=0x7f0a0018;
+        public static final int passwordText=0x7f0a0014;
+        public static final int pastTopText=0x7f0a002a;
+        public static final int phoneLabel=0x7f0a001d;
+        public static final int picHolder=0x7f0a000c;
         public static final int pieLoginLogo=0x7f0a0000;
-        public static final int pieProfile=0x7f0a002b;
-        public static final int profileHours=0x7f0a0015;
+        public static final int pieProfile=0x7f0a0031;
+        public static final int profileHours=0x7f0a001b;
         public static final int startTime=0x7f0a0003;
         public static final int stopTime=0x7f0a0004;
-        public static final int textView1=0x7f0a0009;
-        public static final int textView2=0x7f0a000a;
+        public static final int textView1=0x7f0a000f;
+        public static final int textView2=0x7f0a0010;
         public static final int thankyou=0x7f0a0005;
-        public static final int toCheckin=0x7f0a0022;
-        public static final int toEvent=0x7f0a0013;
-        public static final int upcomingTopText=0x7f0a0027;
-        public static final int usernameText=0x7f0a000f;
-        public static final int vAddress=0x7f0a001e;
-        public static final int vEmail=0x7f0a001d;
-        public static final int vName=0x7f0a001b;
-        public static final int vPhone=0x7f0a001c;
+        public static final int toCheckin=0x7f0a0028;
+        public static final int toEvent=0x7f0a0019;
+        public static final int upcomingTopText=0x7f0a002d;
+        public static final int usernameText=0x7f0a0015;
+        public static final int vAddress=0x7f0a0024;
+        public static final int vEmail=0x7f0a0023;
+        public static final int vName=0x7f0a0021;
+        public static final int vPhone=0x7f0a0022;
     }
     public static final class layout {
         public static final int activity_current=0x7f030000;
         public static final int activity_current_event=0x7f030001;
-        public static final int activity_event=0x7f030002;
-        public static final int activity_info=0x7f030003;
-        public static final int activity_login=0x7f030004;
-        public static final int activity_main=0x7f030005;
-        public static final int activity_profile=0x7f030006;
-        public static final int activity_splash=0x7f030007;
-        public static final int activity_survey=0x7f030008;
-        public static final int article_list_child_item_layout=0x7f030009;
-        public static final int article_list_item_layout=0x7f03000a;
-        public static final int article_screen=0x7f03000b;
-        public static final int eventsflipper=0x7f03000c;
-        public static final int eventswipe=0x7f03000d;
-        public static final int fragment_current_event=0x7f03000e;
-        public static final int fragment_past_events=0x7f03000f;
-        public static final int fragment_upcoming_events=0x7f030010;
+        public static final int activity_details=0x7f030002;
+        public static final int activity_event=0x7f030003;
+        public static final int activity_info=0x7f030004;
+        public static final int activity_login=0x7f030005;
+        public static final int activity_main=0x7f030006;
+        public static final int activity_profile=0x7f030007;
+        public static final int activity_splash=0x7f030008;
+        public static final int activity_survey=0x7f030009;
+        public static final int article_list_child_item_layout=0x7f03000a;
+        public static final int article_list_item_layout=0x7f03000b;
+        public static final int article_screen=0x7f03000c;
+        public static final int eventsflipper=0x7f03000d;
+        public static final int eventswipe=0x7f03000e;
+        public static final int fragment_current_event=0x7f03000f;
+        public static final int fragment_past_events=0x7f030010;
+        public static final int fragment_upcoming_events=0x7f030011;
     }
     public static final class menu {
         public static final int current_event=0x7f090000;
-        public static final int eventswipe=0x7f090001;
-        public static final int main=0x7f090002;
-        public static final int profilemenu=0x7f090003;
+        public static final int event_details=0x7f090001;
+        public static final int eventswipe=0x7f090002;
+        public static final int main=0x7f090003;
+        public static final int profilemenu=0x7f090004;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
         public static final int addressLabel=0x7f05000c;
         public static final int app_name=0x7f050000;
-        public static final int checkinOff=0x7f050015;
         /**  End strings for Login layout 
+ Event Details strings 
          */
-        public static final int checkinOn=0x7f050014;
-        public static final int coordinator=0x7f050022;
+        public static final int checkinButton=0x7f050014;
+        public static final int checkinOff=0x7f050017;
+        public static final int checkinOn=0x7f050016;
+        public static final int coordinator=0x7f050024;
         public static final int emailLabel=0x7f05000b;
         public static final int eventsAt=0x7f05000f;
-        public static final int getGPS=0x7f050026;
-        public static final int gpsOutput=0x7f050025;
-        public static final int hello_world=0x7f050017;
+        public static final int getGPS=0x7f050028;
+        public static final int gpsOutput=0x7f050027;
+        public static final int hello_world=0x7f050019;
         public static final int hours=0x7f05000d;
         public static final int hoursRight=0x7f05000e;
         public static final int imageDesc=0x7f050001;
         /**  End Events Strings section 
   Info Strings 
          */
-        public static final int infoManager=0x7f05001e;
+        public static final int infoManager=0x7f050020;
         public static final int loginButton=0x7f050013;
         public static final int loginPassword=0x7f050012;
         /**  End strings for Profile Layout 
@@ -175,31 +185,32 @@ public final class R {
         public static final int loginUsername=0x7f050011;
         public static final int name=0x7f050009;
         public static final int neartestCheckin=0x7f050007;
-        public static final int nextEvent=0x7f05001a;
-        public static final int otherEvents=0x7f05001c;
-        public static final int partners=0x7f050020;
-        public static final int partnersWebsite=0x7f050021;
+        public static final int nextEvent=0x7f05001c;
+        public static final int otherEvents=0x7f05001e;
+        public static final int partners=0x7f050022;
+        public static final int partnersWebsite=0x7f050023;
         public static final int password=0x7f050005;
         /**  Unused string but just in case below 
          */
-        public static final int passwordHint=0x7f050023;
-        public static final int pastEvents=0x7f05001b;
-        public static final int pastTab=0x7f05001d;
+        public static final int passwordHint=0x7f050025;
+        public static final int pastEvents=0x7f05001d;
+        public static final int pastTab=0x7f05001f;
         public static final int phoneLabel=0x7f05000a;
+        public static final int picHolder=0x7f050015;
         public static final int profileButton=0x7f050003;
         /**  Begin strings for Profile layout 
          */
         public static final int profileHeader=0x7f050008;
         public static final int rank=0x7f050010;
         public static final int thankyou=0x7f050006;
-        public static final int title_activity_current_event=0x7f050016;
+        public static final int title_activity_current_event=0x7f050018;
         /**  Events Strings 
          */
-        public static final int title_activity_eventswipe=0x7f050018;
+        public static final int title_activity_eventswipe=0x7f05001a;
         public static final int toEvents=0x7f050004;
-        public static final int upcomingTab=0x7f050019;
-        public static final int usernameHint=0x7f050024;
-        public static final int yourManager=0x7f05001f;
+        public static final int upcomingTab=0x7f05001b;
+        public static final int usernameHint=0x7f050026;
+        public static final int yourManager=0x7f050021;
     }
     public static final class style {
         public static final int ActionBar_Solid_Piestyle=0x7f070003;

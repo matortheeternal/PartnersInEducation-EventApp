@@ -26,7 +26,7 @@ public class MainActivity extends Activity implements
 		GooglePlayServicesClient.ConnectionCallbacks,
 		GooglePlayServicesClient.OnConnectionFailedListener,
 		com.google.android.gms.location.LocationListener {
-
+	
 	private LocationClient locationClient;
 	private Location currentLocation;
 	private String longText;

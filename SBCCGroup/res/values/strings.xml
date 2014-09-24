@@ -29,6 +29,9 @@
     <string name="loginButton">Login</string>
     <!-- End strings for Login layout -->
 
+    <!-- Event Details strings -->
+    <string name="checkinButton">Check In</string>
+    <string name="picHolder">Event Picture Here</string>
     <string name="checkinOn">I\'m here!</string>
     <string name="checkinOff">Done</string>
     <string name="title_activity_current_event">CurrentEventActivity</string>

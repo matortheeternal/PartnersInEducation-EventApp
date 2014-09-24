@@ -9,7 +9,7 @@
         android:required="true" />
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="16"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -51,6 +51,8 @@
             android:parentActivityName=".ActivityEvent" >
         </activity>
         <activity android:name=".ActivityInfo" >
+        </activity>
+        <activity android:name=".ActivityDetails" >
         </activity>
         <activity
             android:name=".EventswipeActivity"
