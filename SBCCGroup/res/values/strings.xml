@@ -39,7 +39,7 @@
     <!-- Events Strings -->
     <string name="title_activity_eventswipe">eventSwipe</string>
     <string name="upcomingTab">Upcoming</string>
-    <string name="nextEvent">Next Event</string>
+    <string name="nextEvent">Upcoming Events</string>
     <string name="pastEvents">Past Events</string>
     <string name="otherEvents">Other Events</string>
     <string name="pastTab">Past</string>
